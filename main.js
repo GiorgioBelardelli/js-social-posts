@@ -57,7 +57,8 @@ const posts = [
 ];
 
 const postContainer = document.getElementById("container");
-const likeButton = document.querySelector(".like-button");
+const likeButton = document.querySelectorAll(".js-like-button");
+let likedPosts = [];
 
 postGenerator(posts);
 
@@ -71,7 +72,7 @@ function postGenerator(myArray){
             <div class="post__header">
                 <div class="post-meta">                    
                     <div class="post-meta__icon">
-                        <img class="profile-pic" src="${element.author.image}" alt="Phil Mangione">                    
+                        <img class="profile-pic" src="${element.author.image}" alt="${element.author.name}">                    
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${element.author.name}</div>
@@ -104,3 +105,21 @@ function postGenerator(myArray){
 }
 
 
+likeButton.addEventListener ("click",
+
+    function(){
+        likeFunction(likeButton);
+    }
+)
+
+
+
+function likeFunction(button){
+    
+    button.classList.add(liked);
+    // const postValue = button.getAttribute("data-postid");
+    // const likeCounter = document.getElementById(`like-counter-${postId}`);
+
+
+
+}
